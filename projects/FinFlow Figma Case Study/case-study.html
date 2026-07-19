@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinFlow — Mobile Banking Case Study | Anshul Verma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0F172A;
+      --surface: #1E293B;
+      --surface-2: #334155;
+      --border: rgba(255,255,255,0.08);
+      --text: #F8FAFC;
+      --text-sec: #94A3B8;
+      --text-muted: #64748B;
+      --primary: #6366F1;
+      --primary-light: #818CF8;
+      --secondary: #14B8A6;
+      --accent: #F472B6;
+      --warning: #F59E0B;
+      --font: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print styles for PDF export */
+    @media print {
+      body { background: white; color: #0F172A; }
+      .section { page-break-inside: avoid; }
+      .no-print { display: none; }
+    }
+
+    a { color: var(--primary-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 40px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
+      animation: heroGlow 15s ease-in-out infinite;
+    }
+
+    @keyframes heroGlow {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-5%, -5%); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title span { color: var(--primary); }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-sec);
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item { text-align: center; }
+    .meta-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+    .meta-value { font-size: 1rem; font-weight: 600; }
+
+    /* Sections */
+    .section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--secondary);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title em { color: var(--primary); font-style: normal; }
+
+    .section-lead {
+      font-size: 1.1rem;
+      color: var(--text-sec);
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(99, 102, 241, 0.1);
+      border-radius: 12px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .card-text {
+      font-size: 0.92rem;
+      color: var(--text-sec);
+      line-height: 1.7;
+    }
+
+    /* Problem Section */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .problem-stat {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px;
+      background: var(--surface);
+      border-radius: 12px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-text {
+      font-size: 0.95rem;
+      color: var(--text-sec);
+    }
+
+    /* Personas */
+    .persona-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 24px;
+    }
+
+    .persona-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .persona-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .persona-role {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .persona-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .detail-item span:first-child {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .persona-quote {
+      font-style: italic;
+      color: var(--text-sec);
+      border-left: 2px solid var(--primary);
+      padding-left: 16px;
+      margin-top: 16px;
+    }
+
+    /* Design System */
+    .ds-section { margin-bottom: 64px; }
+    .ds-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; color: var(--text-muted); }
+
+    .color-grid {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .color-swatch {
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--border);
+    }
+
+    .type-scale {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-meta {
+      min-width: 120px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Screens */
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .screen-frame {
+      background: var(--surface-2);
+      border-radius: 20px;
+      padding: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .screen-content {
+      background: var(--surface);
+      border-radius: 16px;
+      aspect-ratio: 9/19.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .screen-label {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-sec);
+      margin-top: 12px;
+    }
+
+    /* Journey Map */
+    .journey-phases {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      margin-top: 40px;
+    }
+
+    .journey-phase {
+      background: var(--surface);
+      padding: 24px 16px;
+    }
+
+    .phase-header {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phase-content { font-size: 0.82rem; color: var(--text-sec); }
+    .phase-content p { margin-bottom: 12px; }
+    .phase-emoji { font-size: 1.5rem; margin-bottom: 8px; }
+
+    /* Insights */
+    .insight-row {
+      display: flex;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .insight-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      opacity: 0.3;
+      min-width: 80px;
+    }
+
+    .insight-content h4 { font-size: 1.1rem; margin-bottom: 8px; }
+    .insight-content p { color: var(--text-sec); }
+
+    /* Learnings */
+    .learnings-list {
+      display: grid;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .learning-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--surface);
+      border-radius: 12px;
+    }
+
+    .learning-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(20, 184, 166, 0.1);
+      border-radius: 10px;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    .footer-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-text {
+      color: var(--text-sec);
+      margin-bottom: 32px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .footer-link:hover {
+      border-color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container { padding: 0 24px; }
+      .persona-card { grid-template-columns: 1fr; }
+      .persona-avatar { width: 120px; height: 120px; font-size: 3rem; }
+      .persona-details { grid-template-columns: repeat(2, 1fr); }
+      .problem-grid { grid-template-columns: 1fr; }
+      .screens-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey-phases { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 60px 0; }
+      .hero { padding: 60px 24px; }
+      .hero-meta { gap: 24px; }
+      .screens-grid { grid-template-columns: 1fr 1fr; }
+      .footer-links { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">📱 UI/UX Case Study</span>
+      <h1 class="hero-title">FinFlow — <span>Mobile Banking</span> Reimagined</h1>
+      <p class="hero-subtitle">A comprehensive Figma case study exploring how design thinking can transform financial anxiety into financial confidence.</p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">UI/UX Designer</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Duration</div>
+          <div class="meta-value">3 Weeks</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Tools</div>
+          <div class="meta-value">Figma, FigJam</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Deliverables</div>
+          <div class="meta-value">40+ Screens</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROBLEM -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">◆ The Problem</span>
+      <h2 class="section-title">Young professionals want control, but banking apps create <em>anxiety</em>.</h2>
+      <p class="section-lead">Traditional banking apps overwhelm users with data while providing little insight. They feel corporate, cold, and make managing money stressful instead of empowering.</p>
+      
+      <div class="problem-grid">
+        <div class="problem-stat">
+          <div class="stat-number">72%</div>
+          <div class="stat-text">Check balance multiple times daily, often from spending anxiety</div>
+        </div>
+        <div class="problem-stat">
+          <div class="stat-number">64%</div>
+          <div class="stat-text">Struggle to identify transactions due to cryptic merchant names</div>
+        </div>
+        <div class="problem-stat">
+          <div class="stat-number">81%</div>
+          <div class="stat-text">Want to save more but lack visual progress motivation</div>
+        </div>
+        <div class="problem-stat">
+          <div class="stat-number">7 taps</div>
+          <div class="stat-text">Average required to send money on existing apps</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAS -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">◆ User Personas</span>
+      <h2 class="section-title">Understanding our <em>users</em></h2>
+      <p class="section-lead">Three distinct personas emerged from our research, each with unique needs but a shared desire for financial clarity.</p>
+
+      <div class="persona-card">
+        <div class="persona-avatar">M</div>
+        <div class="persona-info">
+          <h3 class="persona-name">Maya Chen</h3>
+          <p class="persona-role">The Ambitious Saver</p>
+          <div class="persona-details">
+            <div class="detail-item">
+              <span>Age</span>
+              <span>26</span>
+            </div>
+            <div class="detail-item">
+              <span>Occupation</span>
+              <span>Marketing Manager</span>
+            </div>
+            <div class="detail-item">
+              <span>Income</span>
+              <span>$72,000/year</span>
+            </div>
+          </div>
+          <p><strong>Goals:</strong> Save $15K for a down payment, build emergency fund, understand spending</p>
+          <p class="persona-quote">"I want my banking app to be my financial coach, not just a transaction log."</p>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar" style="background: linear-gradient(135deg, #F59E0B, #EF4444);">J</div>
+        <div class="persona-info">
+          <h3 class="persona-name">James Roberts</h3>
+          <p class="persona-role">The Busy Professional</p>
+          <div class="persona-details">
+            <div class="detail-item">
+              <span>Age</span>
+              <span>32</span>
+            </div>
+            <div class="detail-item">
+              <span>Occupation</span>
+              <span>Software Engineer</span>
+            </div>
+            <div class="detail-item">
+              <span>Income</span>
+              <span>$145,000/year</span>
+            </div>
+          </div>
+          <p><strong>Goals:</strong> Minimize time on finance admin, automate everything, quick transfers</p>
+          <p class="persona-quote">"Just tell me if something's wrong. Otherwise, stay out of my way."</p>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar" style="background: linear-gradient(135deg, #EC4899, #8B5CF6);">P</div>
+        <div class="persona-info">
+          <h3 class="persona-name">Priya Patel</h3>
+          <p class="persona-role">The Financial Newbie</p>
+          <div class="persona-details">
+            <div class="detail-item">
+              <span>Age</span>
+              <span>23</span>
+            </div>
+            <div class="detail-item">
+              <span>Occupation</span>
+              <span>Junior Designer</span>
+            </div>
+            <div class="detail-item">
+              <span>Income</span>
+              <span>$48,000/year</span>
+            </div>
+          </div>
+          <p><strong>Goals:</strong> Learn budgeting, stop paycheck-to-paycheck living, build credit</p>
+          <p class="persona-quote">"I wish my bank would teach me, not judge me."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY MAP -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">◆ User Journey</span>
+      <h2 class="section-title">Mapping Maya's <em>savings goal</em> experience</h2>
+      
+      <div class="journey-phases">
+        <div class="journey-phase">
+          <div class="phase-header">Awareness</div>
+          <div class="phase-content">
+            <div class="phase-emoji">🤔</div>
+            <p><strong>Action:</strong> Sees savings feature</p>
+            <p><strong>Thought:</strong> "Can this help me save?"</p>
+            <p><strong>Opportunity:</strong> Onboarding prompt</p>
+          </div>
+        </div>
+        <div class="journey-phase">
+          <div class="phase-header">Consideration</div>
+          <div class="phase-content">
+            <div class="phase-emoji">😊</div>
+            <p><strong>Action:</strong> Explores goal options</p>
+            <p><strong>Thought:</strong> "What kind of goals can I set?"</p>
+            <p><strong>Opportunity:</strong> Pre-built templates</p>
+          </div>
+        </div>
+        <div class="journey-phase">
+          <div class="phase-header">Setup</div>
+          <div class="phase-content">
+            <div class="phase-emoji">😰</div>
+            <p><strong>Action:</strong> Creates goal</p>
+            <p><strong>Thought:</strong> "How much should I save?"</p>
+            <p><strong>Opportunity:</strong> Smart calculator</p>
+          </div>
+        </div>
+        <div class="journey-phase">
+          <div class="phase-header">Tracking</div>
+          <div class="phase-content">
+            <div class="phase-emoji">😌</div>
+            <p><strong>Action:</strong> Checks progress</p>
+            <p><strong>Thought:</strong> "Am I on track?"</p>
+            <p><strong>Opportunity:</strong> Visual progress</p>
+          </div>
+        </div>
+        <div class="journey-phase">
+          <div class="phase-header">Celebration</div>
+          <div class="phase-content">
+            <div class="phase-emoji">🎉</div>
+            <p><strong>Action:</strong> Hits milestone</p>
+            <p><strong>Thought:</strong> "I'm doing it!"</p>
+            <p><strong>Opportunity:</strong> Confetti animation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN SYSTEM -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">◆ Design System</span>
+      <h2 class="section-title">Building a consistent <em>foundation</em></h2>
+      
+      <div class="ds-section">
+        <h3 class="ds-title">Color Palette</h3>
+        <div class="color-grid">
+          <div class="color-swatch" style="background: #6366F1; color: white;">Primary<br>#6366F1</div>
+          <div class="color-swatch" style="background: #14B8A6; color: white;">Success<br>#14B8A6</div>
+          <div class="color-swatch" style="background: #F59E0B; color: #0F172A;">Warning<br>#F59E0B</div>
+          <div class="color-swatch" style="background: #EF4444; color: white;">Error<br>#EF4444</div>
+          <div class="color-swatch" style="background: #0F172A; color: white;">BG Dark<br>#0F172A</div>
+          <div class="color-swatch" style="background: #F8FAFC; color: #0F172A;">Text Light<br>#F8FAFC</div>
+        </div>
+      </div>
+
+      <div class="ds-section">
+        <h3 class="ds-title">Typography Scale</h3>
+        <div class="type-scale">
+          <div class="type-row">
+            <span class="type-meta">Display / 32px</span>
+            <span style="font-size: 32px; font-weight: 700;">$4,235.67</span>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">Heading / 20px</span>
+            <span style="font-size: 20px; font-weight: 600;">Available Balance</span>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">Body / 16px</span>
+            <span style="font-size: 16px; font-weight: 400;">You spent $342 less than last month.</span>
+          </div>
+          <div class="type-row">
+            <span class="type-meta">Caption / 12px</span>
+            <span style="font-size: 12px; font-weight: 400; color: var(--text-muted);">Last updated 2 minutes ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENS -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">◆ High Fidelity Screens</span>
+      <h2 class="section-title">40+ screens across <em>key flows</em></h2>
+      <p class="section-lead">From onboarding to goal completion, every screen was designed with clarity and delight in mind.</p>
+
+      <div class="screens-grid">
+        <div class="screen-frame">
+          <div class="screen-content">Home<br>Dashboard</div>
+          <div class="screen-label">Home</div>
+        </div>
+        <div class="screen-frame">
+          <div class="screen-content">Send<br>Money</div>
+          <div class="screen-label">Send</div>
+        </div>
+        <div class="screen-frame">
+          <div class="screen-content">Goals<br>Progress</div>
+          <div class="screen-label">Goals</div>
+        </div>
+        <div class="screen-frame">
+          <div class="screen-content">Spending<br>Insights</div>
+          <div class="screen-label">Insights</div>
+        </div>
+        <div class="screen-frame">
+          <div class="screen-content">Transaction<br>Detail</div>
+          <div class="screen-label">Transaction</div>
+        </div>
+        <div class="screen-frame">
+          <div class="screen-content">Card<br>Management</div>
+          <div class="screen-label">Cards</div>
+        </div>
+        <div class="screen-frame">
+          <div class="screen-content">Goal<br>Complete 🎉</div>
+          <div class="screen-label">Celebration</div>
+        </div>
+        <div class="screen-frame">
+          <div class="screen-content">Dark<br>Mode</div>
+          <div class="screen-label">Dark Mode</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">◆ Key Solutions</span>
+      <h2 class="section-title">Design decisions that <em>solve problems</em></h2>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3 class="card-title">Contextual Balance</h3>
+          <p class="card-text">Balance displayed with spending context ("$342 less than last month") reduces anxiety and provides immediate value.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">3-Tap Transfers</h3>
+          <p class="card-text">Reduced from industry average of 7 taps. Recent contacts surface first, smart defaults minimize input.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3 class="card-title">Visual Goal Progress</h3>
+          <p class="card-text">Progress rings with milestone celebrations (confetti at 25%, 50%, 75%, 100%) maintain motivation.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏷️</div>
+          <h3 class="card-title">Smart Categorization</h3>
+          <p class="card-text">AI cleans cryptic merchant names ("POS DEBIT 4829183") into readable labels ("Starbucks Coffee").</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔔</div>
+          <h3 class="card-title">Smart Notifications</h3>
+          <p class="card-text">Granular controls let users choose what matters. Contextual alerts only for unusual activity.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌙</div>
+          <h3 class="card-title">True Dark Mode</h3>
+          <p class="card-text">Not just inverted colors — thoughtfully redesigned elevation, contrast, and visual hierarchy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNINGS -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">◆ What I Learned</span>
+      <h2 class="section-title">Key <em>takeaways</em> from this project</h2>
+
+      <div class="learnings-list">
+        <div class="learning-item">
+          <div class="learning-icon">🔬</div>
+          <div>
+            <h4>Research Is Never Wasted</h4>
+            <p style="color: var(--text-sec); font-size: 0.92rem;">Every hour in user interviews saved days of iteration. Understanding balance anxiety led to features I never would have considered.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-icon">🧱</div>
+          <div>
+            <h4>Design Systems Scale</h4>
+            <p style="color: var(--text-sec); font-size: 0.92rem;">Building components upfront took extra time but made creating 40+ screens dramatically faster. Changes propagated instantly.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-icon">✨</div>
+          <div>
+            <h4>Micro-Interactions Matter</h4>
+            <p style="color: var(--text-sec); font-size: 0.92rem;">The confetti on goal milestones took 30 minutes to design but creates disproportionate delight. Small moments build loyalty.</p>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-icon">♿</div>
+          <div>
+            <h4>Accessibility Is Design</h4>
+            <p style="color: var(--text-sec); font-size: 0.92rem;">WCAG compliance isn't a checkbox — it improves usability for everyone. Contrast and touch targets benefit all users.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <h2 class="footer-title">Let's Connect</h2>
+    <p class="footer-text">Interested in working together? I'd love to hear from you.</p>
+    <div class="footer-links">
+      <a href="../../index.html" class="footer-link">← Back to Portfolio</a>
+      <a href="mailto:vermaanshul0112@gmail.com" class="footer-link">📧 Email Me</a>
+      <a href="https://linkedin.com/in/anshul-verma-analyst" class="footer-link">💼 LinkedIn</a>
+    </div>
+    <p style="margin-top: 60px; color: var(--text-muted); font-size: 0.82rem;">
+      © 2026 Anshul Verma — FinFlow is a conceptual project for portfolio purposes.
+    </p>
+  </footer>
+
+</body>
+</html>

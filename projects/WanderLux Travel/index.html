@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wanderlux Travel — Luxury travel experiences crafted for the discerning explorer. Discover extraordinary destinations worldwide.">
+  <meta name="keywords" content="luxury travel, travel agency, exotic destinations, vacation packages, adventure tours">
+  <meta name="author" content="Anshul Verma">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Wanderlux Travel — Luxury Travel Experiences">
+  <meta property="og:description" content="Discover extraordinary destinations with our curated luxury travel experiences.">
+  <meta property="og:type" content="website">
+  
+  <title>Wanderlux Travel — Luxury Travel Experiences</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== LOADER ==================== -->
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-icon">✈</span>
+        <span class="loader-text">Wanderlux</span>
+      </div>
+      <div class="loader-progress">
+        <div class="loader-bar"></div>
+      </div>
+      <p class="loader-tagline">Crafting your journey...</p>
+    </div>
+  </div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="header" id="header">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="#hero" class="nav-brand" aria-label="Wanderlux Travel Home">
+          <span class="brand-icon">✈</span>
+          <span class="brand-name">Wander<span class="brand-accent">lux</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#destinations" class="nav-link">Destinations</a></li>
+          <li><a href="#packages" class="nav-link">Packages</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a href="#booking" class="nav-cta">Plan Your Trip</a>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== MOBILE MENU ==================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a href="#destinations" class="mobile-link">Destinations</a>
+      <a href="#packages" class="mobile-link">Packages</a>
+      <a href="#gallery" class="mobile-link">Gallery</a>
+      <a href="#testimonials" class="mobile-link">Reviews</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="#booking" class="mobile-cta">Plan Your Trip</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+      <!-- Animated Background -->
+      <div class="hero-bg">
+        <img 
+          src="https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1920" 
+          alt="Luxury overwater bungalows in Maldives" 
+          class="hero-bg-img"
+          loading="eager"
+        >
+        <div class="hero-overlay"></div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="hero-shapes">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="badge-icon">★</span>
+          <span>Award-Winning Travel Agency 2022</span>
+        </div>
+        
+        <h1 class="hero-title reveal">
+          <span class="title-line">Discover the</span>
+          <span class="title-line"><em>Extraordinary</em></span>
+          <span class="title-line">World<span class="title-dot">.</span></span>
+        </h1>
+        
+        <p class="hero-desc reveal">
+          Curated luxury travel experiences for the discerning explorer.<br class="hide-mobile">
+          Your journey to extraordinary begins here.
+        </p>
+
+
+        <!-- Hero Stats -->
+        <div class="hero-stats reveal">
+          <div class="stat-item">
+            <span class="stat-number" data-count="150">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Destinations</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="25">0</span><span class="stat-suffix">K+</span>
+            <span class="stat-label">Happy Travelers</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="4">0</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRAVEL CATEGORIES ==================== -->
+    <section class="section categories" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ Travel Styles</span>
+          <h2 class="section-title reveal">
+            How Do You<br>Want to <em>Travel</em>?
+          </h2>
+          <p class="section-desc reveal">
+            From beach escapes to mountain adventures — find your perfect journey style.
+          </p>
+        </div>
+
+        <div class="categories-grid">
+          <div class="category-card reveal" data-category="beach">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="5" r="3"/><path d="M12 8v4m-4 8h8m-4-4v4"/>
+                <path d="M5 16c0-3 2-5 7-5s7 2 7 5"/>
+              </svg>
+            </div>
+            <h3>Beach & Islands</h3>
+            <p>Crystal waters, white sand, tropical paradise</p>
+            <span class="category-count">45 Destinations</span>
+          </div>
+          <div class="category-card reveal" data-category="adventure">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14 2L8 8l-5 5 9 9 5-5 6-6"/>
+                <path d="M14 2l6 6"/>
+                <path d="M3 21l9-9"/>
+              </svg>
+            </div>
+            <h3>Adventure</h3>
+            <p>Hiking, trekking, and thrilling expeditions</p>
+            <span class="category-count">32 Destinations</span>
+          </div>
+          <div class="category-card reveal" data-category="cultural">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2v8l4.5 4.5"/><circle cx="12" cy="14" r="8"/>
+              </svg>
+            </div>
+            <h3>Cultural</h3>
+            <p>History, art, and authentic local experiences</p>
+            <span class="category-count">58 Destinations</span>
+          </div>
+          <div class="category-card reveal" data-category="safari">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+              </svg>
+            </div>
+            <h3>Wildlife Safari</h3>
+            <p>Encounter nature's most magnificent creatures</p>
+            <span class="category-count">18 Destinations</span>
+          </div>
+          <div class="category-card reveal" data-category="romantic">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+              </svg>
+            </div>
+            <h3>Honeymoon</h3>
+            <p>Romantic escapes for couples</p>
+            <span class="category-count">28 Destinations</span>
+          </div>
+          <div class="category-card reveal" data-category="luxury">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Luxury</h3>
+            <p>Five-star resorts and premium experiences</p>
+            <span class="category-count">35 Destinations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== POPULAR DESTINATIONS ==================== -->
+    <section class="section destinations" id="destinations">
+      <div class="container" id="destinations">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ Popular Destinations</span>
+          <h2 class="section-title reveal">
+            Where Dreams<br>Become <em>Reality</em>
+          </h2>
+        </div>
+
+        <div class="destinations-grid">
+          <!-- Destination 1: Maldives -->
+          <article class="destination-card destination-featured reveal">
+            <div class="destination-img">
+              <img 
+                src="https://images.pexels.com/photos/1724430/pexels-photo-1724430.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200" 
+                alt="Overwater bungalows in Maldives"
+                loading="lazy"
+              >
+              <div class="destination-overlay"></div>
+              <span class="destination-badge">Most Popular</span>
+            </div>
+            <div class="destination-content">
+              <div class="destination-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>South Asia</span>
+              </div>
+              <h3>Maldives</h3>
+              <p>Crystal-clear waters and luxury overwater villas await</p>
+              <div class="destination-meta">
+                <span class="destination-price">From 1 Lakh INR</span>
+                <span class="destination-rating">★ 4.9 (2.1k reviews)</span>
+              </div>
+              <a href="#booking" class="destination-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Destination 2: Santorini -->
+          <article class="destination-card reveal">
+            <div class="destination-img">
+              <img 
+                src="https://images.pexels.com/photos/164435/pexels-photo-164435.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" 
+                alt="White buildings of Santorini, Greece"
+                loading="lazy"
+              >
+              <div class="destination-overlay"></div>
+            </div>
+            <div class="destination-content">
+              <div class="destination-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Greece</span>
+              </div>
+              <h3>Santorini</h3>
+              <p>Iconic white architecture and stunning sunsets</p>
+              <div class="destination-meta">
+                <span class="destination-price">From 1.8 Lakh INR</span>
+                <span class="destination-rating">★ 4.8</span>
+              </div>
+              <a href="#booking" class="destination-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Destination 3: Bali -->
+          <article class="destination-card reveal">
+            <div class="destination-img">
+              <img 
+                src="https://images.pexels.com/photos/27375286/pexels-photo-27375286.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" 
+                alt="Ulun Danu Temple in Bali"
+                loading="lazy"
+              >
+              <div class="destination-overlay"></div>
+            </div>
+            <div class="destination-content">
+              <div class="destination-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Indonesia</span>
+              </div>
+              <h3>Bali</h3>
+              <p>Temples, rice terraces, and spiritual serenity</p>
+              <div class="destination-meta">
+                <span class="destination-price">From 1.5 Lakh INR</span>
+                <span class="destination-rating">★ 4.9</span>
+              </div>
+              <a href="#booking" class="destination-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Destination 4: Paris -->
+          <article class="destination-card reveal">
+            <div class="destination-img">
+              <img 
+                src="https://images.pexels.com/photos/29667766/pexels-photo-29667766.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" 
+                alt="Eiffel Tower in Paris"
+                loading="lazy"
+              >
+              <div class="destination-overlay"></div>
+            </div>
+            <div class="destination-content">
+              <div class="destination-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>France</span>
+              </div>
+              <h3>Paris</h3>
+              <p>The city of love, lights, and timeless elegance</p>
+              <div class="destination-meta">
+                <span class="destination-price">From 1.8 Lakh INR</span>
+                <span class="destination-rating">★ 4.7</span>
+              </div>
+              <a href="#booking" class="destination-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Destination 5: Tokyo -->
+          <article class="destination-card reveal">
+            <div class="destination-img">
+              <img 
+                src="https://images.pexels.com/photos/34644895/pexels-photo-34644895.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" 
+                alt="Cherry blossoms at Senso-ji Temple, Tokyo"
+                loading="lazy"
+              >
+              <div class="destination-overlay"></div>
+            </div>
+            <div class="destination-content">
+              <div class="destination-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Japan</span>
+              </div>
+              <h3>Tokyo</h3>
+              <p>Where ancient tradition meets futuristic wonder</p>
+              <div class="destination-meta">
+                <span class="destination-price">From 2.2 Lakh INR</span>
+                <span class="destination-rating">★ 4.8</span>
+              </div>
+              <a href="#booking" class="destination-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Destination 6: Dubai -->
+          <article class="destination-card reveal">
+            <div class="destination-img">
+              <img 
+                src="https://images.pexels.com/photos/30554306/pexels-photo-30554306.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=800" 
+                alt="Dubai Marina skyline at night"
+                loading="lazy"
+              >
+              <div class="destination-overlay"></div>
+            </div>
+            <div class="destination-content">
+              <div class="destination-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>UAE</span>
+              </div>
+              <h3>Dubai</h3>
+              <p>Opulent luxury in the heart of the desert</p>
+              <div class="destination-meta">
+                <span class="destination-price">From 1.9 Lakh INR</span>
+                <span class="destination-rating">★ 4.7</span>
+              </div>
+              <a href="#booking" class="destination-link">Explore →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-cta reveal">
+          <a href="#booking" class="btn btn-outline-light">View All Destinations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED PACKAGES ==================== -->
+    <section class="section packages" id="packages">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ Featured Packages</span>
+          <h2 class="section-title reveal">
+            Curated Travel<br><em>Experiences</em>
+          </h2>
+          <p class="section-desc reveal">
+            All-inclusive packages designed for unforgettable journeys.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Package 1 -->
+          <article class="package-card glass reveal">
+            <div class="package-img">
+              <img 
+                src="https://images.pexels.com/photos/9080917/pexels-photo-9080917.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" 
+                alt="Maldives beach paradise"
+                loading="lazy"
+              >
+              <span class="package-badge">Bestseller</span>
+              <button class="package-wishlist" aria-label="Add to wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="package-content">
+              <div class="package-tags">
+                <span>7 Days</span>
+                <span>All-Inclusive</span>
+                <span>Beach</span>
+              </div>
+              <h3>Maldives Paradise Escape</h3>
+              <p>Overwater villa, spa treatments, sunset cruises, and gourmet dining included.</p>
+              <ul class="package-includes">
+                <li>✓ Private villa</li>
+                <li>✓ Airport transfers</li>
+                <li>✓ Daily breakfast</li>
+                <li>✓ Snorkeling tour</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price">
+                  <span class="price-old">2 Lakh INR</span>
+                  <span class="price-current">1.8 Lakh INR</span>
+                  <span class="price-note">per person</span>
+                </div>
+                <a href="#booking" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package 2 -->
+          <article class="package-card glass reveal">
+            <div class="package-img">
+              <img 
+                src="https://images.pexels.com/photos/14074141/pexels-photo-14074141.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" 
+                alt="African safari with elephant"
+                loading="lazy"
+              >
+              <span class="package-badge deal">30% Off</span>
+              <button class="package-wishlist" aria-label="Add to wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="package-content">
+              <div class="package-tags">
+                <span>10 Days</span>
+                <span>Guided</span>
+                <span>Safari</span>
+              </div>
+              <h3>African Safari Adventure</h3>
+              <p>Witness the Big Five in luxury lodges across Kenya and Tanzania.</p>
+              <ul class="package-includes">
+                <li>✓ Game drives</li>
+                <li>✓ Luxury lodges</li>
+                <li>✓ Bush dinners</li>
+                <li>✓ Hot air balloon</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price">
+                  <span class="price-old">2.5 Lakh INR</span>
+                  <span class="price-current">1.8 Lakh INR</span>
+                  <span class="price-note">per person</span>
+                </div>
+                <a href="#booking" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package 3 -->
+          <article class="package-card glass reveal">
+            <div class="package-img">
+              <img 
+                src="https://images.pexels.com/photos/16511635/pexels-photo-16511635.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" 
+                alt="Santorini village view"
+                loading="lazy"
+              >
+              <button class="package-wishlist" aria-label="Add to wishlist">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="package-content">
+              <div class="package-tags">
+                <span>8 Days</span>
+                <span>Romantic</span>
+                <span>Island</span>
+              </div>
+              <h3>Greek Island Hopping</h3>
+              <p>Santorini, Mykonos, and Athens — the ultimate Mediterranean escape.</p>
+              <ul class="package-includes">
+                <li>✓ Ferry passes</li>
+                <li>✓ Boutique hotels</li>
+                <li>✓ Wine tasting</li>
+                <li>✓ Sunset sailing</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price">
+                  <span class="price-current">2.5 Lakh INR</span>
+                  <span class="price-note">per person</span>
+                </div>
+                <a href="#booking" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US ==================== -->
+    <section class="section why-us" id="why-us">
+      <div class="container">
+        <div class="why-us-grid">
+          <div class="why-us-content">
+            <span class="section-tag reveal">◆ Why Wanderlux</span>
+            <h2 class="section-title reveal">
+              Travel With<br><em>Confidence</em>
+            </h2>
+            <p class="why-us-desc reveal">
+              For over 4 years, we've been crafting extraordinary journeys for discerning travelers. Our commitment to excellence, attention to detail, and passion for exploration sets us apart.
+            </p>
+            <div class="why-us-features">
+              <div class="why-feature reveal">
+                <div class="feature-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>100% Secure Booking</h4>
+                  <p>Protected payments and full refund guarantee</p>
+                </div>
+              </div>
+              <div class="why-feature reveal">
+                <div class="feature-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>24/7 Travel Support</h4>
+                  <p>Round-the-clock assistance wherever you are</p>
+                </div>
+              </div>
+              <div class="why-feature reveal">
+                <div class="feature-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Handpicked Experiences</h4>
+                  <p>Personally vetted hotels, guides, and activities</p>
+                </div>
+              </div>
+              <div class="why-feature reveal">
+                <div class="feature-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Expert Travel Advisors</h4>
+                  <p>Dedicated specialists for every destination</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="why-us-image reveal">
+            <img 
+              src="https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=600" 
+              alt="Traveler enjoying mountain views"
+              loading="lazy"
+            >
+            <div class="why-us-stat glass">
+              <span class="wus-number">98%</span>
+              <span class="wus-text">Customer Satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ Travel Gallery</span>
+          <h2 class="section-title reveal">
+            Moments Worth<br><em>Capturing</em>
+          </h2>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <div class="gallery-item gi-large" data-caption="Maldives sunset">
+            <img src="https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Maldives resort" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-icon">+</span>
+              <span class="gallery-label">Maldives</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="Santorini architecture">
+            <img src="https://images.pexels.com/photos/37844509/pexels-photo-37844509.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Santorini" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-icon">+</span>
+              <span class="gallery-label">Santorini</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="Bali temple">
+            <img src="https://images.pexels.com/photos/27375304/pexels-photo-27375304.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Bali temple" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-icon">+</span>
+              <span class="gallery-label">Bali</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="Tokyo cherry blossoms">
+            <img src="https://images.pexels.com/photos/2187461/pexels-photo-2187461.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="Tokyo cherry blossoms" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-icon">+</span>
+              <span class="gallery-label">Tokyo</span>
+            </div>
+          </div>
+          <div class="gallery-item gi-large" data-caption="Dubai skyline">
+            <img src="https://images.pexels.com/photos/28350363/pexels-photo-28350363.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=900" alt="Dubai skyline" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-icon">+</span>
+              <span class="gallery-label">Dubai</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="African safari">
+            <img src="https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=400&w=600" alt="African elephants" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-icon">+</span>
+              <span class="gallery-label">Safari</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">✕</button>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+
+    <!-- ==================== STATISTICS ==================== -->
+    <section class="section statistics">
+      <div class="statistics-bg">
+        <img src="https://images.pexels.com/photos/6016924/pexels-photo-6016924.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=600&w=1920" alt="Mountain adventure" loading="lazy">
+        <div class="statistics-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="statistics-grid">
+          <div class="stat-box reveal">
+            <span class="stat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/><path d="M2 12h20"/></svg></span>
+            <span class="stat-num" data-count="150">0</span>
+            <span class="stat-label">Destinations</span>
+          </div>
+          <div class="stat-box reveal">
+            <span class="stat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></span>
+            <span class="stat-num" data-count="500">0</span>
+            <span class="stat-label">Tours Completed</span>
+          </div>
+          <div class="stat-box reveal">
+            <span class="stat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
+            <span class="stat-num" data-count="25000">0</span>
+            <span class="stat-label">Happy Travelers</span>
+          </div>
+          <div class="stat-box reveal">
+            <span class="stat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="stat-num" data-count="98">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label">Satisfaction Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ Testimonials</span>
+          <h2 class="section-title reveal">
+            Stories From Our<br><em>Travelers</em>
+          </h2>
+        </div>
+
+        <div class="testimonials-slider" id="testimonialsSlider">
+          <div class="testimonials-track" id="testimonialsTrack">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="testimonial-rating">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "Our Maldives honeymoon exceeded every expectation. Wanderlux handled everything flawlessly — from the seaplane transfer to the private candlelit dinner on the beach. Truly magical."
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/16160809/pexels-photo-16160809.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Emily" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Emily & James</span>
+                  <span class="author-trip">Maldives Honeymoon</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="testimonial-rating">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "The African safari was a life-changing experience. Seeing elephants and lions in their natural habitat, staying in incredible lodges — it was beyond anything I imagined."
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/14950779/pexels-photo-14950779.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Michael Roberts" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Michael Roberts</span>
+                  <span class="author-trip">Kenya Safari Adventure</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="testimonial-rating">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "From the moment we landed in Tokyo to our last sushi dinner, every detail was perfect. The cherry blossom season was breathtaking. Can't wait to book our next trip!"
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/16105478/pexels-photo-16105478.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Sarah Chen" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Sarah Chen</span>
+                  <span class="author-trip">Japan Cultural Tour</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+              <div class="testimonial-rating">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "As a solo traveler, I was nervous about exploring Bali alone. Wanderlux connected me with amazing guides and other travelers. I felt safe and had the time of my life!"
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/1820559/pexels-photo-1820559.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Aisha Patel" loading="lazy">
+                <div class="author-info">
+                  <span class="author-name">Aisha Patel</span>
+                  <span class="author-trip">Bali Solo Adventure</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="slider-controls">
+            <button class="slider-btn prev" id="sliderPrev" aria-label="Previous testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn next" id="sliderNext" aria-label="Next testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SPECIAL OFFERS ==================== -->
+    <section class="section offers" id="offers">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ Limited Time</span>
+          <h2 class="section-title reveal">
+            Special <em>Offers</em>
+          </h2>
+        </div>
+
+        <div class="offers-grid">
+          <div class="offer-card offer-featured glass reveal">
+            <div class="offer-badge">Flash Sale</div>
+            <div class="offer-content">
+              <h3>Early Bird Summer 2025</h3>
+              <p>Book your summer vacation before August 31st and save up to 35% on select destinations.</p>
+              <div class="offer-details">
+                <span class="offer-discount">35% OFF</span>
+                <span class="offer-code">Use code: SUMMER35</span>
+              </div>
+              <div class="offer-timer" id="offerTimer" data-end="2025-03-31">
+                <div class="timer-unit">
+                  <span class="timer-value" id="timerDays">00</span>
+                  <span class="timer-label">Days</span>
+                </div>
+                <div class="timer-unit">
+                  <span class="timer-value" id="timerHours">00</span>
+                  <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-unit">
+                  <span class="timer-value" id="timerMins">00</span>
+                  <span class="timer-label">Mins</span>
+                </div>
+                <div class="timer-unit">
+                  <span class="timer-value" id="timerSecs">00</span>
+                  <span class="timer-label">Secs</span>
+                </div>
+              </div>
+              <a href="#booking" class="btn btn-primary">Claim Offer</a>
+            </div>
+          </div>
+
+          <div class="offer-card glass reveal">
+            <h3>Honeymoon Package</h3>
+            <p>Complimentary champagne, spa treatments, and room upgrades for newlyweds.</p>
+            <span class="offer-discount">Free Upgrades</span>
+            <a href="#booking" class="btn btn-outline">Learn More</a>
+          </div>
+
+          <div class="offer-card glass reveal">
+            <h3>Group Discount</h3>
+            <p>Travel with 6+ friends or family and get 20% off your entire booking.</p>
+            <span class="offer-discount">20% OFF</span>
+            <a href="#booking" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BOOKING CTA ==================== -->
+    <section class="section booking-cta" id="booking">
+      <div class="booking-bg">
+        <img src="https://images.pexels.com/photos/9080921/pexels-photo-9080921.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1920" alt="Luxury resort pool" loading="lazy">
+        <div class="booking-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="booking-content reveal">
+          <h2>Ready for Your Next <em>Adventure</em>?</h2>
+          <p>Let our travel experts craft your perfect journey. Fill out the form and we'll get back to you within 24 hours.</p>
+          <form class="booking-form" id="bookingForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookName">Full Name</label>
+                <input type="text" id="bookName" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="bookEmail">Email</label>
+                <input type="email" id="bookEmail" placeholder="you@email.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookDest">Destination Interest</label>
+                <select id="bookDest" required>
+                  <option value="">Select destination</option>
+                  <option value="maldives">Maldives</option>
+                  <option value="santorini">Santorini, Greece</option>
+                  <option value="bali">Bali, Indonesia</option>
+                  <option value="paris">Paris, France</option>
+                  <option value="tokyo">Tokyo, Japan</option>
+                  <option value="dubai">Dubai, UAE</option>
+                  <option value="safari">African Safari</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bookBudget">Budget Range</label>
+                <select id="bookBudget">
+                  <option value="">Select budget</option>
+                  <option value="1000-2000">1.0 Lakh - 2.0 Lakh</option>
+                  <option value="2000-3500">2.0 Lakh - 3.5 Lakh</option>
+                  <option value="3500-5000">3.5 Lakh - 5.0 Lakh</option>
+                  <option value="5000+">5.0 Lakh+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bookMessage">Tell us about your dream trip</label>
+              <textarea id="bookMessage" rows="4" placeholder="Dates, travelers, special requests..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Start Planning</button>
+          </form>
+          <div class="booking-success" id="bookingSuccess">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>Our travel advisor will contact you within 24 hours to start planning your dream vacation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="section newsletter">
+      <div class="container">
+        <div class="newsletter-inner glass reveal">
+          <div class="newsletter-content">
+            <h3>Get Exclusive Deals</h3>
+            <p>Subscribe to our newsletter for travel inspiration and members-only offers.</p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p class="newsletter-note">No spam, ever. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag reveal">◆ Get In Touch</span>
+            <h2 class="section-title reveal">
+              Let's Plan Your<br><em>Journey</em>
+            </h2>
+            <p class="contact-desc reveal">
+              Have questions? Our travel experts are here to help you create the perfect trip.
+            </p>
+            <div class="contact-details reveal">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Visit Us</h4>
+                  <p>44 , Cyber Park<br>Gurugram, Haryana, IN 122017</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Call Us</h4>
+                  <p>+91-7827643211<br>Mon-Fri: 9AM - 8PM IST</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Email Us</h4>
+                  <p>hello@wanderlux.com<br>Response within 24 hours</p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-social reveal">
+              <a href="#" class="social-link" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="contact-map reveal">
+            <div class="map-placeholder" style="padding:0;overflow:hidden;">
+              <img src="https://images.pexels.com/photos/8828591/pexels-photo-8828591.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=700" alt="Travel map with destination pins" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-xl);filter:brightness(0.8) saturate(0.7);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-brand">
+            <span class="brand-icon">✈</span>
+            <span class="brand-name">Wander<span class="brand-accent">lux</span></span>
+          </a>
+          <p class="footer-tagline">Crafting extraordinary journeys since 2012.</p>
+          <div class="footer-certifications">
+            <span class="cert-badge">IATA Certified</span>
+            <span class="cert-badge">ASTA Member</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Destinations</h4>
+            <a href="#">Maldives</a>
+            <a href="#">Santorini</a>
+            <a href="#">Bali</a>
+            <a href="#">Paris</a>
+            <a href="#">Tokyo</a>
+          </div>
+          <div class="footer-col">
+            <h4>Travel Styles</h4>
+            <a href="#">Beach & Islands</a>
+            <a href="#">Adventure</a>
+            <a href="#">Cultural</a>
+            <a href="#">Safari</a>
+            <a href="#">Luxury</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cancellation Policy</a>
+            <a href="#">Travel Insurance</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Wanderlux Travel. All rights reserved.</p>
+        <p class="footer-credit">Designed by <a href="../../index.html">Anshul Verma</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

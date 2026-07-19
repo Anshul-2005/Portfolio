@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study — Noir Brew Coffee Shop | Anshul Verma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --border: rgba(255,255,255,0.07);
+      --text: #f5f0eb;
+      --text-sec: #a09888;
+      --text-muted: #5a5347;
+      --gold: #c8a35f;
+      --gold-light: #e0c98d;
+      --radius: 12px;
+      --font-d: 'Playfair Display', Georgia, serif;
+      --font-b: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+    /* NAV */
+    .cs-nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      padding: 18px 0;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .cs-nav-inner {
+      max-width: 760px; margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cs-back {
+      font-size: 0.85rem; color: var(--text-sec);
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.3s;
+    }
+    .cs-back:hover { color: var(--gold); }
+    .cs-nav-title {
+      font-family: var(--font-d); font-size: 1rem; font-weight: 600;
+    }
+
+    /* HERO */
+    .cs-hero {
+      padding: 160px 0 80px; text-align: center;
+    }
+    .cs-tag {
+      font-size: 0.72rem; font-weight: 600; color: var(--gold);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 20px; display: block;
+    }
+    .cs-title {
+      font-family: var(--font-d); font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700; line-height: 1.2; letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .cs-title em { color: var(--gold); font-style: italic; }
+    .cs-subtitle {
+      font-size: 1.05rem; color: var(--text-sec); max-width: 520px;
+      margin: 0 auto 40px;
+    }
+    .cs-meta {
+      display: flex; justify-content: center; gap: 48px;
+      flex-wrap: wrap;
+    }
+    .cs-meta-item { text-align: center; }
+    .cs-meta-label {
+      display: block; font-size: 0.7rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;
+    }
+    .cs-meta-value {
+      font-family: var(--font-d); font-size: 0.95rem; font-weight: 600;
+    }
+
+    /* SECTION */
+    .cs-section { padding: 60px 0; }
+    .cs-section-title {
+      font-family: var(--font-d); font-size: 1.6rem; font-weight: 600;
+      margin-bottom: 20px; letter-spacing: -0.01em;
+    }
+    .cs-section-title em { color: var(--gold); font-style: italic; }
+    .cs-text {
+      font-size: 1rem; color: var(--text-sec); line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .cs-divider {
+      height: 1px; background: var(--border); margin: 20px 0;
+    }
+
+    /* IMAGE */
+    .cs-image {
+      margin: 40px 0; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .cs-image img {
+      width: 100%; display: block;
+    }
+
+    /* LIST */
+    .cs-list {
+      list-style: none; padding: 0; margin: 20px 0;
+    }
+    .cs-list li {
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+      font-size: 0.95rem; color: var(--text-sec);
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .cs-list li::before {
+      content: '◆'; color: var(--gold); font-size: 0.5rem;
+      margin-top: 6px; flex-shrink: 0;
+    }
+
+    /* GRID */
+    .cs-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      margin: 24px 0;
+    }
+    .cs-grid-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+    }
+    .cs-grid-item h4 {
+      font-family: var(--font-d); font-size: 1rem; font-weight: 600;
+      margin-bottom: 8px; color: var(--gold);
+    }
+    .cs-grid-item p {
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* QUOTE */
+    .cs-quote {
+      font-family: var(--font-d); font-size: 1.3rem; font-style: italic;
+      color: var(--text); line-height: 1.6; text-align: center;
+      padding: 40px 20px; margin: 40px 0;
+      border-left: 2px solid var(--gold);
+      background: rgba(200,163,95,0.03);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* CTA */
+    .cs-cta {
+      text-align: center; padding: 80px 0;
+    }
+    .cs-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--bg);
+      padding: 16px 36px; border-radius: 100px;
+      font-weight: 600; font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .cs-cta-btn:hover {
+      background: var(--gold-light); color: var(--bg);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(200,163,95,0.25);
+    }
+
+    /* FOOTER */
+    .cs-footer {
+      padding: 32px 0; border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .cs-footer p { font-size: 0.78rem; color: var(--text-muted); }
+
+    @media (max-width: 600px) {
+      .cs-grid { grid-template-columns: 1fr; }
+      .cs-meta { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="cs-nav">
+    <div class="cs-nav-inner">
+      <a href="index.html" class="cs-back">← Back to Project</a>
+      <span class="cs-nav-title">Case Study</span>
+    </div>
+  </nav>
+
+  <main>
+    <section class="cs-hero">
+      <div class="container">
+        <span class="cs-tag">◆ Case Study</span>
+        <h1 class="cs-title">Noir Brew —<br>Coffee Shop <em>Landing Page</em></h1>
+        <p class="cs-subtitle">Designing a dark luxury landing page for a premium specialty coffee brand — from concept to code.</p>
+        <div class="cs-meta">
+          <div class="cs-meta-item">
+            <span class="cs-meta-label">Role</span>
+            <span class="cs-meta-value">Designer & Developer</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label">Duration</span>
+            <span class="cs-meta-value">1 Week</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label">Tools</span>
+            <span class="cs-meta-value">Figma, VS Code</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label">Tech</span>
+            <span class="cs-meta-value">HTML, CSS, JS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-image">
+      <img src="https://images.pexels.com/photos/18150815/pexels-photo-18150815.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Noir Brew hero screenshot">
+    </div>
+
+    <div class="container">
+
+      <section class="cs-section">
+        <h2 class="cs-section-title">The <em>Challenge</em></h2>
+        <p class="cs-text">
+          Design and build a complete landing page for a fictional premium coffee shop brand — "Noir Brew." The page needed to convey luxury, warmth, and craft while remaining fully functional with a reservation system, interactive menu, and image gallery.
+        </p>
+        <p class="cs-text">
+          The challenge was to create something that felt like a real business website — not a student project — using only vanilla HTML, CSS, and JavaScript with zero frameworks or libraries.
+        </p>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <section class="cs-section">
+        <h2 class="cs-section-title">Design <em>Decisions</em></h2>
+        <div class="cs-grid">
+          <div class="cs-grid-item">
+            <h4>Dark Aesthetic</h4>
+            <p>Deep blacks with warm gold accents create a moody, upscale atmosphere that mirrors the in-store experience.</p>
+          </div>
+          <div class="cs-grid-item">
+            <h4>Typography</h4>
+            <p>Playfair Display (serif) for headings gives editorial elegance. Inter (sans-serif) for body text ensures readability.</p>
+          </div>
+          <div class="cs-grid-item">
+            <h4>Gold Accent System</h4>
+            <p>A warm gold (#c8a35f) serves as the single accent color — used sparingly for CTAs, badges, and highlights.</p>
+          </div>
+          <div class="cs-grid-item">
+            <h4>Real Photography</h4>
+            <p>High-quality stock photos from Pexels ground the design in reality and give the fictional brand immediate credibility.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <section class="cs-section">
+        <h2 class="cs-section-title">Key <em>Features</em></h2>
+        <ul class="cs-list">
+          <li>Full-screen parallax hero with animated particle effects and counter stats</li>
+          <li>Tabbed menu system with smooth transitions between Coffee, Specialty, Pastries, and Cold Drinks</li>
+          <li>Responsive image gallery with lightbox and 3D tilt hover effects</li>
+          <li>Auto-playing testimonial carousel with swipe/touch support</li>
+          <li>Reservation form with real-time validation and success animation</li>
+          <li>Infinite scrolling marquee of drink names</li>
+          <li>Glassmorphism navigation with backdrop blur</li>
+          <li>Scroll-triggered reveal animations using IntersectionObserver</li>
+          <li>Back-to-top button with smooth scroll</li>
+          <li>Fully responsive — mobile, tablet, desktop</li>
+        </ul>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <section class="cs-section">
+        <h2 class="cs-section-title">Technical <em>Approach</em></h2>
+        <p class="cs-text">
+          The entire project was built with vanilla HTML, CSS, and JavaScript — no React, no Tailwind, no dependencies. This was a deliberate choice to demonstrate core frontend fundamentals.
+        </p>
+        <p class="cs-text">
+          CSS custom properties power the design system, making colors, spacing, and typography easily configurable. All animations use CSS transitions and transforms for GPU acceleration. JavaScript handles interactivity through event delegation and IntersectionObserver for performance.
+        </p>
+      </section>
+
+      <div class="cs-quote">
+        "The constraint of no frameworks forced me to think deeply about every line of code — resulting in a lighter, faster, and more intentional product."
+      </div>
+
+      <section class="cs-section">
+        <h2 class="cs-section-title">What I <em>Learned</em></h2>
+        <ul class="cs-list">
+          <li>How to create complex UI interactions (tabs, carousels, lightboxes) without any library</li>
+          <li>The power of CSS custom properties for building scalable design systems</li>
+          <li>IntersectionObserver is incredibly powerful for scroll-based animations</li>
+          <li>Touch event handling for mobile-friendly carousel interactions</li>
+          <li>How typography pairing and color restraint can elevate a design dramatically</li>
+          <li>The importance of prefers-reduced-motion for accessibility</li>
+        </ul>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <section class="cs-cta">
+        <a href="index.html" class="cs-cta-btn">View Live Project →</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="cs-footer">
+    <div class="container">
+      <p>Case study by <a href="../../index.html">Anshul Verma</a> &middot; &copy; 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>

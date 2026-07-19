@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Noir Brew — Premium Specialty Coffee. Handcrafted drinks, artisan pastries, and an unforgettable ambiance.">
+  <title>Noir Brew — Premium Specialty Coffee</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">NB</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text">Brewing your experience...</p>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-icon">☕</span>
+        <span class="brand-text">Noir<span class="brand-accent">Brew</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">Our Story</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#testimonials" class="nav-link">Reviews</a>
+        <a href="#reservation" class="nav-link nav-cta">Reserve a Table</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-nav">
+      <a href="#about" class="mobile-link">Our Story</a>
+      <a href="#menu" class="mobile-link">Menu</a>
+      <a href="#gallery" class="mobile-link">Gallery</a>
+      <a href="#testimonials" class="mobile-link">Reviews</a>
+      <a href="#reservation" class="mobile-link">Reserve a Table</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src="https://images.pexels.com/photos/18150815/pexels-photo-18150815.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=1920" alt="Noir Brew coffee shop interior" class="hero-img">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="badge-diamond">◆</span>
+          Est. 2026 — Specialty Coffee
+        </div>
+        <h1 class="hero-title reveal">
+          <span class="hero-line">Where Every</span>
+          <span class="hero-line"><em>Sip</em> Tells a</span>
+          <span class="hero-line">Story<span class="gold-dot">.</span></span>
+        </h1>
+        <p class="hero-desc reveal">
+          Handcrafted specialty coffee, artisan pastries, and an atmosphere <br class="hide-mobile">designed for those who appreciate the finer things.
+        </p>
+        <div class="hero-buttons reveal">
+          <a href="#menu" class="btn btn-gold">Explore Our Menu</a>
+          <a href="#reservation" class="btn btn-outline">Reserve a Table</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="stat">
+            <span class="stat-number" data-target="12">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Single Origins</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number" data-target="5000">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Happy Customers</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number" data-target="4">0</span><span class="stat-suffix">.9★</span>
+            <span class="stat-label">Average Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT / STORY ==================== -->
+    <section class="section about" id="about">
+      <div class="container"id="about-content">
+        <div class="about-grid">
+          <div class="about-images reveal">
+            <div class="about-img-main">
+              <img src="https://images.pexels.com/photos/16444392/pexels-photo-16444392.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Barista pouring latte art" loading="lazy">
+            </div>
+            <div class="about-img-accent">
+              <img src="https://images.pexels.com/photos/15813480/pexels-photo-15813480.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Latte art closeup" loading="lazy">
+            </div>
+            <div class="about-badge-float">
+              <span class="abf-number">6</span>
+              <span class="abf-text">Years of<br>Excellence</span>
+            </div>
+          </div>
+          <div class="about-content">
+            <span class="section-tag reveal">◆ Our Story</span>
+            <h2 class="section-heading reveal">Crafted With<br>Passion, Served<br>With <em>Soul</em>.</h2>
+            <p class="about-text reveal">
+              Noir Brew was born from a singular obsession: the perfect cup of coffee. We source our beans directly from sustainable farms across Ethiopia, Colombia, and Guatemala — roasting them in small batches to bring out their unique character.
+            </p>
+            <p class="about-text reveal">
+              Every drink is a ritual. Every visit, an experience. Our baristas are trained artisans who understand that coffee is more than caffeine — it's culture, craft, and connection.
+            </p>
+            <div class="about-features reveal">
+              <div class="feature">
+                <div class="feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <div>
+                  <h4>Single Origin</h4>
+                  <p>Ethically sourced beans</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </div>
+                <div>
+                  <h4>Handcrafted</h4>
+                  <p>Made with love daily</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div>
+                  <h4>Fresh Roasted</h4>
+                  <p>Small-batch, weekly</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MARQUEE ==================== -->
+    <div class="marquee-section">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>Espresso</span><span class="marquee-dot">◆</span>
+          <span>Cappuccino</span><span class="marquee-dot">◆</span>
+          <span>Pour Over</span><span class="marquee-dot">◆</span>
+          <span>Cold Brew</span><span class="marquee-dot">◆</span>
+          <span>Latte Art</span><span class="marquee-dot">◆</span>
+          <span>Cortado</span><span class="marquee-dot">◆</span>
+          <span>Flat White</span><span class="marquee-dot">◆</span>
+          <span>Affogato</span><span class="marquee-dot">◆</span>
+          <span>Espresso</span><span class="marquee-dot">◆</span>
+          <span>Cappuccino</span><span class="marquee-dot">◆</span>
+          <span>Pour Over</span><span class="marquee-dot">◆</span>
+          <span>Cold Brew</span><span class="marquee-dot">◆</span>
+          <span>Latte Art</span><span class="marquee-dot">◆</span>
+          <span>Cortado</span><span class="marquee-dot">◆</span>
+          <span>Flat White</span><span class="marquee-dot">◆</span>
+          <span>Affogato</span><span class="marquee-dot">◆</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MENU ==================== -->
+    <section class="section menu" id="menu">
+      <div class="container"id="menu-content">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ The Menu</span>
+          <h2 class="section-heading text-center reveal">Curated for the<br><em>Connoisseur</em>.</h2>
+          <p class="section-sub reveal">Each drink is crafted to perfection using our signature roasts.</p>
+        </div>
+
+        <div class="menu-tabs reveal">
+          <button class="menu-tab active" data-tab="coffee">Coffee</button>
+          <button class="menu-tab" data-tab="specialty">Specialty</button>
+          <button class="menu-tab" data-tab="pastries">Pastries</button>
+          <button class="menu-tab" data-tab="cold">Cold Drinks</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+
+          <!-- COFFEE TAB -->
+          <div class="menu-panel active" data-panel="coffee">
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Classic Espresso</h4>
+                <p class="menu-desc">Rich, bold single shot pulled from our house blend</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 150 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Cappuccino</h4>
+                <p class="menu-desc">Espresso, steamed milk, silky microfoam</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 220 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Flat White</h4>
+                <p class="menu-desc">Double ristretto, velvety steamed milk</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 250 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Pour Over</h4>
+                <p class="menu-desc">Single origin, hand-poured V60 — ask for today's selection</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 180 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Americano</h4>
+                <p class="menu-desc">Espresso diluted with hot water, clean and smooth</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 150 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Cortado</h4>
+                <p class="menu-desc">Equal parts espresso and warm steamed milk</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 200 INR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPECIALTY TAB -->
+          <div class="menu-panel" data-panel="specialty">
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Noir Signature Latte</h4>
+                <p class="menu-desc">House espresso, oat milk, vanilla bean, dark cocoa dust</p>
+                <span class="menu-badge">★ Bestseller</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 650 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Lavender Honey Latte</h4>
+                <p class="menu-desc">Espresso, lavender syrup, raw honey, steamed milk</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 600 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Caramel Brûlée Macchiato</h4>
+                <p class="menu-desc">Espresso, caramelized sugar, vanilla cream</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 625 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Rose Cardamom Mocha</h4>
+                <p class="menu-desc">Dark chocolate, rose water, cardamom, espresso</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 675 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Affogato</h4>
+                <p class="menu-desc">Espresso poured over artisan vanilla gelato</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 700 INR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASTRIES TAB -->
+          <div class="menu-panel" data-panel="pastries">
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Butter Croissant</h4>
+                <p class="menu-desc">Classic French laminated pastry, golden and flaky</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 150 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Pain au Chocolat</h4>
+                <p class="menu-desc">Dark chocolate wrapped in buttery croissant dough</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 220 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Almond Danish</h4>
+                <p class="menu-desc">Frangipane filling, sliced almonds, powdered sugar</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 250 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Banana Walnut Loaf</h4>
+                <p class="menu-desc">House-baked, perfectly moist with toasted walnuts</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 200 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Tiramisu Slice</h4>
+                <p class="menu-desc">Espresso-soaked layers, mascarpone, cocoa</p>
+                <span class="menu-badge">★ Chef's Pick</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 650 INR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLD DRINKS TAB -->
+          <div class="menu-panel" data-panel="cold">
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Cold Brew</h4>
+                <p class="menu-desc">18-hour steeped, smooth and naturally sweet</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 180 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Iced Noir Latte</h4>
+                <p class="menu-desc">Our signature blend over ice with oat milk</p>
+                <span class="menu-badge">★ Bestseller</span>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 250 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Espresso Tonic</h4>
+                <p class="menu-desc">Espresso shot over premium tonic water and ice</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 220 INR</span>
+              </div>
+            </div>
+            <div class="menu-item reveal">
+              <div class="menu-item-left">
+                <h4 class="menu-name">Iced Matcha Latte</h4>
+                <p class="menu-desc">Ceremonial grade matcha, oat milk, over ice</p>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-line"></span>
+                <span class="menu-price"> 650 INR</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ The Space</span>
+          <h2 class="section-heading text-center reveal">A Glimpse Inside<br><em>Noir Brew</em>.</h2>
+        </div>
+        <div class="gallery-grid reveal">
+          <div class="gallery-item gallery-large" data-caption="Our signature latte art">
+            <img src="https://images.pexels.com/photos/36964586/pexels-photo-36964586.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Signature latte art" loading="lazy">
+            <div class="gallery-overlay">
+              <span>Latte Art</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="Freshly roasted beans">
+            <img src="https://images.pexels.com/photos/19286173/pexels-photo-19286173.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Coffee beans closeup" loading="lazy">
+            <div class="gallery-overlay">
+              <span>Fresh Roast</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="Our warm, inviting space">
+            <img src="https://images.pexels.com/photos/11387970/pexels-photo-11387970.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Coffee shop interior" loading="lazy">
+            <div class="gallery-overlay">
+              <span>The Space</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="Artisan croissants baked daily">
+            <img src="https://images.pexels.com/photos/3850349/pexels-photo-3850349.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Fresh croissants" loading="lazy">
+            <div class="gallery-overlay">
+              <span>Pastries</span>
+            </div>
+          </div>
+          <div class="gallery-item gallery-large" data-caption="Barista crafting your perfect cup">
+            <img src="https://images.pexels.com/photos/8936942/pexels-photo-8936942.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Barista at work" loading="lazy">
+            <div class="gallery-overlay">
+              <span>The Craft</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-caption="Coffee brewing methods">
+            <img src="https://images.pexels.com/photos/6278886/pexels-photo-6278886.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Espresso machine" loading="lazy">
+            <div class="gallery-overlay">
+              <span>Brewing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag reveal">◆ Reviews</span>
+          <h2 class="section-heading text-center reveal">What Our Guests<br><em>Say</em>.</h2>
+        </div>
+        <div class="testimonials-slider" id="testimonialsSlider">
+          <div class="testimonial-track" id="testimonialTrack">
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <blockquote class="testimonial-quote">
+                "The best coffee I've had outside of Italy. The atmosphere is incredibly intimate and the baristas genuinely care about their craft. Noir Brew is my sanctuary."
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/33680700/pexels-photo-33680700.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Sophia Martinez" loading="lazy">
+                <div>
+                  <span class="author-name">Sophia Martinez</span>
+                  <span class="author-role">Food Blogger</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <blockquote class="testimonial-quote">
+                "I come here every morning before work. Their pour-over is absolutely exceptional — you can taste the care in every cup. The croissants are dangerously good too."
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/5308640/pexels-photo-5308640.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Aryan Verma" loading="lazy">
+                <div>
+                  <span class="author-name">Aryan Verma</span>
+                  <span class="author-role">Regular Customer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <blockquote class="testimonial-quote">
+                "As a Web-Interface Designer, I'm drawn to beautiful spaces. Noir Brew nails every detail — from the interior design to the presentation of each drink. Pure artistry."
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/1820559/pexels-photo-1820559.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Ananya Patel" loading="lazy">
+                <div>
+                  <span class="author-name">Ananya Patel</span>
+                  <span class="author-role">Interior Designer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <blockquote class="testimonial-quote">
+                "Had the Noir Signature Latte and it changed my entire understanding of what coffee can be. This place is a hidden gem. Don't sleep on the tiramisu."
+              </blockquote>
+              <div class="testimonial-author">
+                <img class="author-avatar-img" src="https://images.pexels.com/photos/33799456/pexels-photo-33799456.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=80&w=80" alt="Ryan Kim" loading="lazy">
+                <div>
+                  <span class="author-name">Ryan Kim</span>
+                  <span class="author-role">Tech Entrepreneur</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn slider-next" id="sliderNext" aria-label="Next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RESERVATION ==================== -->
+    <section class="section reservation" id="reservation">
+      <div class="container">
+        <div class="reservation-grid">
+          <div class="reservation-info">
+            <span class="section-tag reveal">◆ Reservation</span>
+            <h2 class="section-heading reveal">Reserve Your<br><em>Experience</em>.</h2>
+            <p class="reservation-desc reveal">
+              Secure your spot in our intimate space. Whether it's a morning ritual or an evening escape, we'll have your table ready.
+            </p>
+            <div class="reservation-details reveal">
+              <div class="res-detail">
+                <div class="res-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div>
+                  <h4>Hours</h4>
+                  <p>Mon — Fri: 7AM — 9PM<br>Sat — Sun: 8AM — 10PM</p>
+                </div>
+              </div>
+              <div class="res-detail">
+                <div class="res-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <h4>Location</h4>
+                  <p>42, Cyber Hub<br>Gurugram, Haryana, IN 122017</p>
+                </div>
+              </div>
+              <div class="res-detail">
+                <div class="res-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div>
+                  <h4>Contact</h4>
+                  <p>+91-7827643211<br>hello@noirbrew.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reservation-form-wrap reveal">
+            <form class="reservation-form" id="reservationForm">
+              <h3 class="form-title">Book a Table</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="resName">Full Name</label>
+                  <input type="text" id="resName" placeholder="Anshul Verma" required>
+                </div>
+                <div class="form-group">
+                  <label for="resEmail">Email</label>
+                  <input type="email" id="resEmail" placeholder="anshul@email.com" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="resDate">Date</label>
+                  <input type="date" id="resDate" required>
+                </div>
+                <div class="form-group">
+                  <label for="resTime">Time</label>
+                  <select id="resTime" required>
+                    <option value="">Select time</option>
+                    <option>7:00 AM</option>
+                    <option>8:00 AM</option>
+                    <option>9:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>12:00 PM</option>
+                    <option>1:00 PM</option>
+                    <option>2:00 PM</option>
+                    <option>3:00 PM</option>
+                    <option>4:00 PM</option>
+                    <option>5:00 PM</option>
+                    <option>6:00 PM</option>
+                    <option>7:00 PM</option>
+                    <option>8:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="resGuests">Guests</label>
+                  <select id="resGuests" required>
+                    <option value="">How many?</option>
+                    <option>1 Person</option>
+                    <option>2 People</option>
+                    <option>3 People</option>
+                    <option>4 People</option>
+                    <option>5 People</option>
+                    <option>6+ People</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="resPhone">Phone</label>
+                  <input type="tel" id="resPhone" placeholder="+91-85430 34000">
+                </div>
+              </div>
+              <div class="form-group full">
+                <label for="resMessage">Special Requests</label>
+                <textarea id="resMessage" rows="3" placeholder="Any dietary requirements or special occasions?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold btn-full">Confirm Reservation</button>
+            </form>
+            <div class="form-success" id="formSuccess">
+              <div class="success-icon">✓</div>
+              <h3>Reservation Confirmed!</h3>
+              <p>We'll send you a confirmation email shortly. See you at Noir Brew!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner">
+      <div class="cta-bg">
+        <img src="https://images.pexels.com/photos/33492608/pexels-photo-33492608.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Coffee beans" loading="lazy">
+        <div class="cta-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="cta-content reveal">
+          <h2>Life's Too Short for<br><em>Bad Coffee</em>.</h2>
+          <p>Visit us today or order our beans online. Your morning ritual deserves an upgrade.</p>
+          <div class="cta-buttons">
+            <a href="#reservation" class="btn btn-gold">Visit Us</a>
+            <a href="#menu" class="btn btn-outline">See Full Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-icon">☕</span>
+          <span class="brand-text">Noir<span class="brand-accent">Brew</span></span>
+          <p class="footer-tagline">Where every sip tells a story.</p>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>Visit</h4>
+            <a href="#about">Our Story</a>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#reservation">Reservations</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Yelp</a>
+          </div>
+          <div class="footer-col">
+            <h4>Hours</h4>
+            <p>Mon — Fri: 7AM — 9PM</p>
+            <p>Sat — Sun: 8AM — 10PM</p>
+            <p class="footer-address">42, Cyber Hub<br>Gurugram, Haryana, IN 122017</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Noir Brew. All rights reserved.</p>
+        <p class="footer-credit">Designed by <a href="../../index.html">Anshul Verma</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
